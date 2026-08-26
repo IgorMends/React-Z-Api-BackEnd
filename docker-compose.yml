@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  chat-api-db:
+    image: postgres:15-alpine
+    container_name: chat-api-postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=chat_api_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - chat_api_data:/var/lib/postgresql/data
+  mongodb:
+    image: mongo:8
+    container_name: chat-api-mongodb
+    restart: always
+    ports:
+      - "27027:27017"
+    environment:
+      MONGO_INITDB_DATABASE: chat_api_messages
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  chat_api_data:
+  mongodb_data:

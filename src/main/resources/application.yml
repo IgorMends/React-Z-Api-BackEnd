@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/chat_api_db
+    username: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver
+
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+
+  mongodb:
+    uri: mongodb://localhost:27027/chat_api_messages
+
+server:
+  port: 8080
