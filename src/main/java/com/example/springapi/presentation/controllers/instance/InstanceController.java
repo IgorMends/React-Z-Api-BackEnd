@@ -10,6 +10,7 @@ import tools.jackson.databind.ObjectMapper;
 
 @RestController
 @RequestMapping("/instance")
+@CrossOrigin(origins = "http://localhost:5173") // 👈 aqui
 @RequiredArgsConstructor
 public class InstanceController {
 
