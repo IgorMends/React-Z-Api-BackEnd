@@ -23,6 +23,8 @@ public class InstanceRepositoryImpl implements InstanceRepository {
             InstanceEntity existing = entity.get();
 
             existing.setName(instance.getName());
+            existing.setToken(instance.getToken());
+            existing.setClientToken(instance.getClientToken());
             existing.setPaymentStatus(instance.getPaymentStatus());
             existing.setConnectionStatus(instance.getConnectionStatus());
             existing.setAutoReadMessage(instance.getAutoReadMessage());

@@ -8,6 +8,8 @@ public class InstanceMapper {
         return new Instance(
                 instanceEntity.getInstanceId(),
                 instanceEntity.getName(),
+                instanceEntity.getToken(),
+                instanceEntity.getClientToken(),
                 instanceEntity.getCreated(),
                 instanceEntity.getPaymentStatus(),
                 instanceEntity.getConnectionStatus(),
@@ -22,6 +24,8 @@ public class InstanceMapper {
                 null,
                 instance.getId(),
                 instance.getName(),
+                instance.getToken(),
+                instance.getClientToken(),
                 instance.getCreated(),
                 instance.getPaymentStatus(),
                 instance.getConnectionStatus(),

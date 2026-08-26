@@ -13,6 +13,8 @@ public class Instance {
 
     private String id;
     private String name;
+    private String token;
+    private String clientToken;
     private Date created;
     private String paymentStatus;
     private Boolean connectionStatus;

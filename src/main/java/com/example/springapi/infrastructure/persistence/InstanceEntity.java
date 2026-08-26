@@ -22,6 +22,10 @@ public class InstanceEntity {
     private String instanceId;
     @Column("name")
     private String name;
+    @Column("token")
+    private String token;
+    @Column("client_token")
+    private String clientToken;
     @Column("created")
     private Date created;
     @Column("payment_status")

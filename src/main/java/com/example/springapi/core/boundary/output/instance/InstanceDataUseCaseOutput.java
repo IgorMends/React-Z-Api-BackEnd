@@ -14,6 +14,7 @@ public class InstanceDataUseCaseOutput {
     private String id;
     private String token;
     private String name;
+    private String clientToken;
     private Boolean connected;
     private String created;
     private Long due;

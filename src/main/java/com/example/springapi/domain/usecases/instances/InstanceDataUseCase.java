@@ -29,6 +29,7 @@ public class InstanceDataUseCase {
 
                 InstanceDataUseCaseOutput response = InstanceDataUseCaseOutput.builder()
                         .name(instance.getName())
+                        .clientToken(instance.getClientToken())
                         .id(instance.getId())
                         .connected(instance.getConnectionStatus())
                         .paymentStatus(instance.getPaymentStatus())
@@ -45,6 +46,7 @@ public class InstanceDataUseCase {
             InstanceDataUseCaseOutput output = InstanceDataUseCaseOutput.builder()
                     .id(response.get("id") != null ? response.get("id").toString() : null)
                     .token(response.get("token") != null ? response.get("token").toString() : null)
+                    .clientToken(clientToken)
                     .name(response.get("name") != null ? response.get("name").toString() : null)
                     .connected(response.get("connected") != null ? (Boolean)response.get("connected") : null)
                     .created(response.get("created") != null ? response.get("created").toString() : null)
@@ -69,6 +71,8 @@ public class InstanceDataUseCase {
             Instance instance = new Instance(
                     output.getId(),
                     output.getName(),
+                    instanceToken,
+                    clientToken,
                     date,output.getPaymentStatus(),
                     output.getConnected(),
                     output.getAutoReadMessage(),
